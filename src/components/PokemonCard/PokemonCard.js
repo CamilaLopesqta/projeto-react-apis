@@ -15,7 +15,6 @@ import {
 } from "./PokemonCardStyle";
 import logoPokemonCard from "../../assets/logo-pokemon-background.svg";
 
-
   function PokemonCard(props) {
   const navigate = useNavigate();
   const location = useLocation();

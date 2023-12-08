@@ -24,8 +24,6 @@ import logoPokemonCard from "../../assets/logo-pokemon-background.svg";
 import Header from "../../components/Header/Header";
 import { BASE_URL } from "../../components/constants/url";
 
-
-
 function PokemonDetailPage(props) {
   const [pokemon, setPokemon] = useState({});
   const [bgColor, setBgColor] = useState("");
