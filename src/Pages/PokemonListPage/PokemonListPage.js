@@ -6,14 +6,14 @@ import PokemonCard from "../../components/PokemonCard/PokemonCard";
 
 function PokemonListPage() {
   const context = useContext(GlobalContext);
-  const { pokemonsList } = context;
+  const { pokesList } = context;
 
   return (
     <Container>
       <BoxTitle>
         <Title>Todos os Pokémons</Title>
       </BoxTitle>
-      {pokemonsList
+      {pokesList
       .map((pokemon) => {
         return <PokemonCard key={pokemon.name} url={pokemon.url} />;
       })}

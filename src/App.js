@@ -5,21 +5,20 @@ import Router from "../src/Router/Router";
 import { GlobalStyle } from "./GlobalStyles";
 import ModalPokemon from "../src/components/Modal/Modal";
 
-
 function App() {
-  const [pokemonsList, setPokemonsList] = useState([]);
+  const [pokesList, setPokesList] = useState([]);
   const [pokedex, setPokedex] = useState([]);
   const [pokemonDetails, setPokemonDetails] = useState({});
 
   useEffect(() => {
-    pokeList();
+    getPokemons();
   }, []);
 
-  const pokeList = async () => {
+  const getPokemons = async () => {
     await axios
       .get("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0")
       .then((res) => {
-        setPokemonsList(res.data.results);
+        setPokesList(res.data.results);
       })
       .catch((err) => {
         console.log(err);
@@ -48,12 +47,11 @@ function App() {
     console.log(newPokedex, "copy")
     setPokedex(newPokedex);
   };
-
   
   const context = {
-    pokemonsList,
-    setPokemonsList,
-    pokeList,
+    pokesList,
+    setPokesList,
+    getPokemons,
     pokedex,
     setPokedex,
     addPokemonToPokedex,
@@ -75,4 +73,3 @@ function App() {
 }
 
 export default App;
-

@@ -6,7 +6,6 @@ import { Button } from "@chakra-ui/react";
 import { ContainerHeader } from "./HeaderStyle";
 import logoPokemon from "../../assets/pokemon-logo.svg";
 
-
 function Header(props) {
   const navigate = useNavigate();
   const location = useLocation();
